@@ -9,7 +9,6 @@ class Node
     } 
 } 
 
-
 class BinarySearchTree 
 { 
     constructor() 
