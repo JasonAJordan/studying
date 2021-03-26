@@ -28,3 +28,31 @@ function smallestDifference(arrayOne, arrayTwo) {
 	}
 	return smallest;
 }
+
+// better refactor with helper and overall logic.
+function moveElementToEnd2(array, toMove) {
+    // Write your code here.
+      
+      let i = 0;
+      let j = array.length - 1;
+      
+      while (i < j){
+          if (array[j] === toMove){
+              j--;
+          } else if (array[i] === toMove){
+              swapHelper(i, j, array)
+              i++;
+          } else {
+              i++;
+          }
+          
+      }
+      return array;
+  }
+  
+  function swapHelper(i, j, array){
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+      
+  }
