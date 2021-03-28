@@ -19,9 +19,20 @@ Difficulty: Medium
 *************************************************************************************/
 
 function areCoprime(num1, num2) {
+  let limit = (num1 > num2) ? num1 : num2; 
+
+  for(let i = 2; i <= limit; i++){
+    let condition1 = (num1 % i === 0)
+    let condition2 = (num2 % i === 0)
+
+    if (condition1 && condition2){
+      return false;
+    }
+  }
+
+  return true;
 
 }
 
-/******************** DO NOT MODIFY ANYTHING UNDER THIS LINE *************************/
+//console.log(areCoprime(6, 15))
 
-module.exports = areCoprime;

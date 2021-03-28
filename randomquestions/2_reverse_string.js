@@ -11,9 +11,15 @@ Difficulty: Easy
 *************************************************************************************/
 
 function reverseString(str) {
+    let reverseOrder = []
 
+    for (let i = str.length - 1; i >= 0; i--){
+        let char = str[i];
+        reverseOrder.push(char)
+    }
+    return reverseOrder.join("");
 }
 
-/******************** DO NOT MODIFY ANYTHING UNDER THIS LINE *************************/
+console.log(reverseString('taco'))
 
-module.exports = reverseString;
+

@@ -12,9 +12,7 @@ Difficulty: Easy
 *************************************************************************************/
 
 function wordSandwich(outerWord, innerWord) {
-  
+    return outerWord.toUpperCase() + innerWord.toLowerCase() + outerWord.toUpperCase()
 }
 
-/******************** DO NOT MODIFY ANYTHING UNDER THIS LINE *************************/
-
-module.exports = wordSandwich;
+//console.log(wordSandwich('HeLLo', 'worLD'))

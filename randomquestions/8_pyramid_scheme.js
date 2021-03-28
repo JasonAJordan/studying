@@ -45,5 +45,32 @@ Difficulty: Hard
 
 function pyramidScheme(base) {
 
+  //let pyramid = new Array(base.length).fill(0)
+  //pyramid[base.length -1] = base
+
+  let pyramid = new Array(base.length)
+  pyramid[base.length - 1] = base
+  let currentArray = base;
+
+  for (let i = 0; i < base.length - 1; i++){
+    
+    let newRow = layerHelper(currentArray)
+    currentArray = newRow
+    pyramid[base.length - 2 - i] = newRow
+  }
+  return pyramid
 }
 
+function layerHelper(layer){
+    let newArray = new Array(layer.length - 1)
+  
+    for (let i = 0; i < layer.length - 1; i++){
+        let ele1 = layer[i];
+        let ele2 = layer[i+1];
+        newArray[i] = (ele1 + ele2);
+    }  
+    return newArray;
+  }
+
+
+console.log(JSON.stringify(pyramidScheme([2, 2, 2, 2])));

@@ -19,8 +19,18 @@ Difficulty: Medium
 
 function shoppingCartCost(cart, prices) {
 
+    let total = 0; 
+
+    for (item in cart){
+        amount = cart[item]
+        total += prices[item] * amount
+    }
+    return total
+
 }
 
-/******************** DO NOT MODIFY ANYTHING UNDER THIS LINE *************************/
+// var prices = {bread: 4, butter: 6, milk: 3, eggs: 7, celery: 1};
+// var cart1 = {bread : 2, milk: 1, eggs : 1};
+// var cart2 = {milk: 2, celery: 5};
 
-module.exports = shoppingCartCost;
+//console.log(shoppingCartCost(cart2, prices)); // => 18

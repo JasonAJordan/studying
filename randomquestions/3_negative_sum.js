@@ -11,9 +11,13 @@ Difficulty: Easy
 *************************************************************************************/
 
 function negativeSum(arr) {
-
+    let sum  = 0;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] < 0){
+            sum += arr[i];
+        }
+    }
+    return sum; 
 }
 
-/******************** DO NOT MODIFY ANYTHING UNDER THIS LINE *************************/
-
-module.exports = negativeSum;
+//console.log(negativeSum([-3, 12, -5, -2, 3]))

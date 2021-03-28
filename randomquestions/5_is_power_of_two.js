@@ -16,9 +16,15 @@ Difficulty: Medium
 *************************************************************************************/
 
 function isPowerOfTwo(num) {
+    if (num < 1) return false;
 
+    for (let i =1; i <=num; i = i* 2){
+        if (num % i > 0){
+            return false;
+        }
+    }
+    return true;
 }
 
-/******************** DO NOT MODIFY ANYTHING UNDER THIS LINE *************************/
+console.log(isPowerOfTwo(34))
 
-module.exports = isPowerOfTwo;
