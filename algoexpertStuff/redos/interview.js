@@ -133,21 +133,21 @@ https://medium.com/nodesimplified/javascript-memory-management-and-garbage-colle
 
 
 
-public class Node {
-	private Integer num;
-	public Node next;
+// public class Node {
+// 	private Integer num;
+// 	public Node next;
 
-	public Node(int num) {
-		this.num = num
-	}
-}
+// 	public Node(int num) {
+// 		this.num = num
+// 	}
+// }
 
-// building the linked list
-Node root = new Node(2)
-Node node1 = new Node(5)
-root.next = node1
-Node node2 = new Node(1)
-node1.next = node2
+// // building the linked list
+// Node root = new Node(2)
+// Node node1 = new Node(5)
+// root.next = node1
+// Node node2 = new Node(1)
+// node1.next = node2
 // .... 2-5-1-4-6-2-11-44-1
 // invert the elements of the linked list 2 by 2
 // 2-5-1-4-6-2-11-44-1 becomes 5-2-4-1-2-6-44-11-1
