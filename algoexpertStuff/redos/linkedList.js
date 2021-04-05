@@ -25,21 +25,8 @@ class Node {
 }
 
 // Input should be something like this
-
 const list = {
-    head: {
-        value: 2,
-        next: {
-            value: 5,                                            
-            next: {
-                value: 1,
-                next: {
-                    value: 4,
-                    next: null	
-                    }
-                }
-            }
-        }
+    head: { value: 2, next: { value: 5, next: { value: 1, next: { value: 4, next: null } } } }
 }
 
 
@@ -47,23 +34,17 @@ function invertLinkedListByTwo(list){
 
     let nodes = list.head;
     let node = nodes;
-    let loops = 1;
 
     while (node) {
         let tempValue = node.value
-        //console.log(JSON.stringify(node))
-        //console.log(node.next)
 
         node.value = node.next.value;
         node.next.value = tempValue; 
-        console.log(JSON.stringify(node) + " " + loops)
 
-        //if (node.next.next === null) !nodes
         node = node.next.next
-        loops++;
     }
 
     return nodes;
 }
 
-console.log(JSON.stringify(invertLinkedListByTwo(list)) + "asdfasdf")
+console.log(JSON.stringify(invertLinkedListByTwo(list)))
