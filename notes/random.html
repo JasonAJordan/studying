@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is html</p>
+
+<form id="frm1"> 
+    Number: <input type="number" name="fname" value="000"><br>
+</form> 
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="output"></p>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("frm1");
+      var text = "";
+      var i;
+      for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+      }
+      document.getElementById("output").innerHTML = text;
+    }
+</script>
+
+</body>
+</html>
+
+
+<!-- Write a Python program that asks the user to enter their 3 digit id number. Use the input statement to read in the user's id number.
+Note that someone could enter 001 or 000 since both are 3 digits long.
+if the user enters an id longer than 3 characters or less than 3 character you should print "Invalid ID".
+if the integer value of the id number is less than 200, print "Low Level Access Code"
+if the integer value of the id number is greater than or equal to 200 but less than 400, print "Medium Level Access Code"
+if the integer value of the id number is greater than or equal to 400, print "High Level Access Code" -->
+<!-- then the followup is Modify your code to question 8 such that if the user does not enter three digits (either more or less) then the program will print "Invalid ID" AND then continue to request and read (using the input statement) a valid ID number.
+
+The program should not stop until a valid ID is entered by the user. -->
