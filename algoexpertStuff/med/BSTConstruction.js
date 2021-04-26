@@ -2,17 +2,17 @@
 // the insert, contains, and remove methods.
 // Feel free to add new properties and methods
 // to the class.
+
 class BST {
     constructor(value) {
       this.value = value;
       this.left = null;
       this.right = null;
     }
-  
+
+
     insert(value) {
-          
           if (value < this.value){
-              
               if (this.left === null){
                   this.left = new BST(value);
               } else {
@@ -24,8 +24,7 @@ class BST {
               } else {
                   this.right.insert(value);
               }
-          }
-          
+          }  
       return this;
     }
   
@@ -92,3 +91,22 @@ class BST {
           }
       }
   }
+
+let emptyArray = [];
+function inOrderTraverse(tree, array) {
+      if (tree !== null){
+          inOrderTraverse(tree.left, array)
+          array.push(tree.value)
+          inOrderTraverse(tree.right, array)
+      }
+      return array; 
+}
+
+  const newTree = new BST(10);
+  //console.log(newTree)
+  newTree.insert(3), newTree.insert(1)
+  newTree.insert(8), newTree.insert(12)
+
+  console.log(newTree.right)
+  
+  console.log(inOrderTraverse(newTree, []))
