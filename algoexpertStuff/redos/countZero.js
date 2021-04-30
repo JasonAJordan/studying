@@ -15,3 +15,12 @@ function countZero(number){
 
 // (122/ 10) * 1 = 12 
 //  Math.floor(122 / 100) * 10 = 10
+
+function countZero2(n) { 
+  let count = 0
+  while(n>0) { 
+    count += Math.floor(n/10) 
+    n = n/10 
+  } 
+  return count 
+}
