@@ -1,5 +1,5 @@
 function kadanesAlgorithm(array) {
-    // Write your code here.
+
       let currentMax = array[0];
       let totalmax = array[0];
       
