@@ -3,11 +3,19 @@
 //mod types;
 //mod strings;
 //mod tuples;
-mod arrays;
+//mod arrays;
+//mod vectors;
+//mod conditionals;
+//mod loops;
+//mod functions;
+//mod pointer_ref; 
+//mod structs;
+mod enums;
 
 fn main() {
     //print::run();
-    arrays::run();
+    //structs::run();
+    enums::run();
 }
 
 
