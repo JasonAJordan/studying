@@ -6,7 +6,7 @@ enum Movement {
     Down,
     Left,
     Right,
-  }
+}
   
   fn move_avatar(m: Movement) {
     // Perform action depending on info
@@ -18,7 +18,7 @@ enum Movement {
     }
   }
   
-  pub fn run() {
+pub fn run() {
     let avatar1 = Movement::Left;
     let avatar2 = Movement::Up;
     let avatar3 = Movement::Right;
@@ -28,4 +28,4 @@ enum Movement {
     move_avatar(avatar2);
     move_avatar(avatar3);
     move_avatar(avatar4);
-  }
+}
