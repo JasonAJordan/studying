@@ -11,13 +11,14 @@
 //mod pointer_ref; 
 //mod structs;
 //mod enums;
-mod cli;
+//mod cli;
+mod debug;
 
 fn main() {
     //print::run();
     //structs::run();
     //enums::run();
-    cli::run();
+    debug::run();
 }
 
 

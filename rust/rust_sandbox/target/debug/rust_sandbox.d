@@ -1,1 +1,1 @@
-C:\Users\Jason\Desktop\codingall\studying\rust\rust_sandbox\target\debug\rust_sandbox.exe: C:\Users\Jason\Desktop\codingall\studying\rust\rust_sandbox\src\cli.rs C:\Users\Jason\Desktop\codingall\studying\rust\rust_sandbox\src\main.rs
+C:\Users\Jason\Desktop\codingall\studying\rust\rust_sandbox\target\debug\rust_sandbox.exe: C:\Users\Jason\Desktop\codingall\studying\rust\rust_sandbox\src\debug.rs C:\Users\Jason\Desktop\codingall\studying\rust\rust_sandbox\src\main.rs
