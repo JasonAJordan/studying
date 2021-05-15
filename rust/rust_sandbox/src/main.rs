@@ -11,7 +11,7 @@
 //mod pointer_ref; 
 //mod structs;
 //mod enums;
-//mod cli;
+mod cli;
 mod debug;
 
 fn main() {
