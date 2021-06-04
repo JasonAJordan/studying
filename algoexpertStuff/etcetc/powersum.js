@@ -1,16 +1,19 @@
-function powerSet(num) {
+function powerSetSum(num) {
 
 let result = 0;
 let array = [...Array(num + 1).keys()];
 let array2 = [[]];
 array.splice(0,1)
 
-for(let i=0; i < array.length ;i++){
+for(let i= 0; i < array.length ;i++){
+
     //this line is crucial! It prevents us from infinite loop
     let len = array2.length; 
     for(let x = 0; x < len ;x++){
       array2.push(array2[x].concat(array[i]))
+      
     }
+    console.log(JSON.stringify(array2))
 }
 
 for (let i = 1; i < array2.length; i++){
@@ -23,4 +26,4 @@ for (let i = 1; i < array2.length; i++){
 return result;
 }
 
-console.log(JSON.stringify(powerSet(3)))
+console.log(JSON.stringify(powerSetSum(3)))
