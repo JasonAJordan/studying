@@ -14,7 +14,7 @@ import Html.Events exposing (onClick)
 
 main = Browser.sandbox { init = init, update = update, view = view }
 
--- MODEL
+  `-- MODEL
 type alias Model = Int
 
 init : Model
