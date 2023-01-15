@@ -44,18 +44,17 @@ Difficulty: Hard
 *************************************************************************************/
 
 function pyramidScheme(base) {
-  let output = [base]
+  let array = [base]
 
   for (let i = 0; i < base.length - 1; i++){
-    //console.log("output", output)
-    let newLayer = []
-    for (let j = 0; j < output[i].length - 1; j++){
-      //console.log(newLayer, i, j, output[i][j], output[i][j + 1])
-      newLayer.push(output[i][j] + output[i][j + 1])
+    let currentLayer = array[i]
+    let nextLayer = []
+    for (let j = 0; j < currentLayer.length - 1; j++){
+      nextLayer.push(currentLayer[j] + currentLayer[j+1])
     }
-    output.push(newLayer);
+    array.push(nextLayer)
   }
-  return output.reverse()
+  return array.reverse()
 }
 
 
