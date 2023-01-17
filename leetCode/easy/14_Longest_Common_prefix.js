@@ -13,7 +13,7 @@ var longestCommonPrefix = function(strs) {
 
 
 // better solution
-let longestCommonPrefix2 = function(strs) {
+var longestCommonPrefix2 = function(strs) {
     let prefix = ""
     for(let i=0; i< strs[0].length; i++){
         const character = strs[0][i]
@@ -23,5 +23,6 @@ let longestCommonPrefix2 = function(strs) {
         prefix += character
     }
     return prefix
- };
- longestCommonPrefix(["flower","flow","flight"])
+};
+
+console.log(longestCommonPrefix(["flower","flow","flight"]));

@@ -1,4 +1,5 @@
 // My solution was the same of as other solutions :)
+// also imo we should be returning a new sliced array but this is what the question was asking for 
 
 var removeElement = function(nums, val) {
     let k = 0;
@@ -9,5 +10,8 @@ var removeElement = function(nums, val) {
         }
         // console.log(nums)
     }
+    console.log(k, nums)
     return k;
 };
+
+console.log(removeElement([1,1,2,4,4,5], 4))

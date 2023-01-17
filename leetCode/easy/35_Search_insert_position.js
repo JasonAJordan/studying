@@ -3,7 +3,7 @@
 var searchInsert = function(nums, target) {
     let min = 0
     let max = nums.length - 1;
-    // console.log(min, max)
+    console.log("min: ", min, "max: ", max)
     while (min <= max){
         let mid = Math.floor(( max + min) / 2)
         if (target > nums[mid]){
@@ -13,7 +13,7 @@ var searchInsert = function(nums, target) {
         } else {
             return mid
         }
-    // console.log(min, max, mid, nums[mid])
+    console.log(min, max, mid, nums[mid])
     }
     return min 
 };
@@ -41,3 +41,5 @@ var searchInsert2 = function(nums, target) {
 
     return result;
 }
+
+console.log( searchInsert([1,3,3,7], 2))

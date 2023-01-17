@@ -1,3 +1,6 @@
+// Give the length of the array that has it's dups left behind,
+// imo we should be returning a clean array but this is what the question was asking for 
+
 
 // My 2021 submitions as I missread the question and was lost. 
 var removeDuplicates = function(nums) {

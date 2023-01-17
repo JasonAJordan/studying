@@ -60,4 +60,8 @@ const mergeTwoLists2 = (l1, l2) => {
     }
 }
 
-console.log(mergeTwoLists((4, 4)),(2))
+
+const list1 = new ListNode(2,6)
+const list2 = new ListNode(3,5)
+
+console.log(mergeTwoLists2(list1,list2))
