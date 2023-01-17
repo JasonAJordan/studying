@@ -1,5 +1,5 @@
 // I actually don't know what is "^=" opperator existed until I looked at a solution
-// asdf
+
 
 var singleNumber = function(nums) {
 
