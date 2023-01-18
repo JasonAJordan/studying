@@ -20,3 +20,12 @@
     }
     return start[n-1]
 };
+
+// better thing I made while re-do
+var climbStairs2 = function(n) {
+    let start = [1,2]; 
+    for (let i = 2; i < n; i++){
+      start.push(start[i-2] + start[i-1])
+    }
+    return start[n-1]
+  };

@@ -31,3 +31,58 @@ var addBinary = function(a, b) {
     }
     return result.split("").reverse().join("")
 };
+
+// an awful way I ended up doing
+
+var addBinary = function(a, b) {
+    let hold = 0;
+    let arryA = a.split("")
+    let arryB = b.split("")
+    let results = []
+
+    while (arryA.length > 0 || arryB.length > 0){
+        if (arryA.length > 0 && arryB.length > 0){
+
+          let aVal = parseInt(arryA.pop())
+          let bVal = parseInt(arryB.pop())
+          let result = aVal + bVal + hold
+          hold = 0
+          if (result == 3){
+            results.unshift(1);
+            hold = 1
+          } else if (result == 2){
+            results.unshift(0);
+            hold = 1;
+          } else if (result == 1){
+            results.unshift(1);
+          } else {
+            results.unshift(0);
+          }
+        } else if (arryA.length > 0) {
+          let result = parseInt(arryA.pop()) + hold
+          hold = 0
+          if (result == 2){
+            results.unshift(0);
+            hold = 1;
+          } else if (result == 1){
+            results.unshift(1);
+          } else {
+            results.unshift(0);
+          } 
+        } else {
+          let result = parseInt(arryB.pop()) + hold
+          hold = 0
+          if (result == 2){
+            results.unshift(0);
+            hold = 1;
+          } else if (result == 1){
+            results.unshift(1);
+          } else {
+            results.unshift(0);
+          }
+        }
+
+    } 
+  if (hold == 1) results.unshift(1)
+  return results.join("")
+};
