@@ -4,7 +4,6 @@
     this.right = (right===undefined ? null : right)
     }
 
-// Not sure how to reproduce it on my machine 
 
 var preorderTraversal = function(root) {
     if (!root) {

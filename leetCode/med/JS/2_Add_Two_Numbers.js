@@ -1,6 +1,6 @@
-function TreeNode(val, left) {
+function ListNode(val, next) {
   this.val = (val===undefined ? 0 : val)
-  this.next = (left===undefined ? null : next)
+  this.next = (next===undefined ? null : next)
   }
 
 var addTwoNumbers = function(l1, l2) {
@@ -10,6 +10,7 @@ var addTwoNumbers = function(l1, l2) {
   var carry = 0;
 
   while(l1!==null||l2!==null||sum>0){
+    console.log(List)
     if(l1!==null){
       sum = sum + l1.val;
       l1 = l1.next;
@@ -24,7 +25,9 @@ var addTwoNumbers = function(l1, l2) {
     }
 
     head.next = new ListNode(sum);
+    console.log("asdf", head, "@@@@", head.next, List)
     head = head.next;
+    console.log("eeee", head, "@@@@", head.next, List)
 
     sum = carry;
     carry = 0;
@@ -33,3 +36,15 @@ var addTwoNumbers = function(l1, l2) {
 
   return List.next; 
 };
+
+// let testt3 = new ListNode(4, null)
+let testt2 = new ListNode(3,null)
+let testt = new ListNode(1, testt2)
+
+
+//let test3 = new ListNode(3, null)
+let test2 = new ListNode(2,null)
+let test = new ListNode(1, test2)
+
+  // 1 2 4 + 1 3 3 
+console.log(addTwoNumbers(test, testt))
