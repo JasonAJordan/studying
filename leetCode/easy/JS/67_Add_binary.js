@@ -86,3 +86,46 @@ var addBinary = function(a, b) {
   if (hold == 1) results.unshift(1)
   return results.join("")
 };
+
+
+// retry on 1/31
+
+var addBinary = function(a, b) {
+  let carry = 0
+  let result = []
+
+  let aL = a.split("")
+  let bL = b.split("")
+
+  while (aL.length > 0 || bL.length > 0 || carry > 0){
+    let sum = carry
+    if (aL.length > 0){
+      let charA = aL.pop()
+      if (charA == "1"){
+        sum += 1
+      } 
+    }
+    if (bL.length > 0){
+      let charB = bL.pop()
+      if (charB == "1"){
+        sum += 1
+      } 
+    }
+
+    if (sum === 3){
+      carry = 1
+      result.push("1")
+    } else if (sum === 2){
+      carry = 1
+      result.push("0")
+    } else if (sum === 1){
+      carry = 0
+      result.push("1")
+    } else {
+      carry = 0
+      result.push("0")
+    }
+    //console.log(result, aL, bL, carry)
+  }
+  return result.reverse().join("")
+};
