@@ -23,3 +23,20 @@ function longestPalindrome(s) {
 }
 
 console.log(longestPalindrome("cbbaabbe"))
+
+// What I would type up
+
+var longestPalindrome = function(s) {
+  let maxLeft = 0
+  let maxRight = 0
+
+
+  for (let i = 0; i<s.length; i++){
+    for (let j = i; j <= i + 1; j++){ //aba vs abba
+      for (l = i, r = j; s[l] && s[l] === s[r]; l--, r++){
+        [maxLeft, maxRight] = (r-l+1) > (maxRight-maxLeft+1) ? [l, r] : [maxLeft, maxRight];
+      }
+    }
+  }
+  return s.slice(maxLeft, maxRight+1);
+};
