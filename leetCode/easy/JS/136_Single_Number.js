@@ -12,4 +12,7 @@ var singleNumber = function(nums) {
   
   };
 
-  singleNumber([4,2,1,4,2])
+// singleNumber([4,2,1,4,2])
+
+console.log( 1 ^ 1 )
+console.log( (1 ^ 2), (3 ^ 3))
