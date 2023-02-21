@@ -39,7 +39,7 @@ const numOfSubarraysSW = (nums, k, threshold) => {
   return count;
 };
 
-// The solution I understand 02
+// The solution I understand 0n
 var numOfSubarrays = function(arr, k, threshold) {
  
   let i= 0 , sum = 0 , count=0;
