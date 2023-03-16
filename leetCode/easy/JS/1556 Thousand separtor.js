@@ -1,3 +1,5 @@
+// I found a better solutions that wasn't a one line answer. 
+
 var thousandSeparator = function(n) {
   if (n<1000) {
     return n.toString();

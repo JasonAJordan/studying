@@ -11,7 +11,7 @@ var canChange = function (start, target) {
 		if (start[i] === "L" && rCount > 0) return false;//if there is an unsetteled R in start
 
 		if (target[i] === "L") lCount++;//add l to count
-		if (target[i] === "R") rCount--;//remove r from count
+		if (target[i] === "R") rCount--;//remove r from count0
 
 		if (lCount< 0 || rCount < 0) return false;//check if the requirements are less than available
 	}

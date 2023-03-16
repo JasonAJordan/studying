@@ -14,7 +14,7 @@ var differenceOfSum = function(nums) {
 var differenceOfSum = function(nums) {
   
   const elsum = nums.reduce((a, b) => a + b, 0);
-  var  digits = nums.join('').split('');
+  var  digits = nums.join('').split(''); // Also til that you can use .join("") to conver an array of ints to string 
   var digsum = 0;
   for (var i = 0; i<digits.length; ++i ){
       digsum = digsum + Number(digits[i]);
