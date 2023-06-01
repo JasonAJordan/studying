@@ -38,3 +38,19 @@ var generate = function(numRows) {
     }
     return pascal;
 };
+
+// my redo months later 
+let array = [[1], [1,1]]
+  if (numRows == 1) return [[1]];
+  if (numRows == 2) return array;
+
+  for (let i = 2; i < numRows; i++){
+  let newRow = [1];
+  for (let j = 1; j < i; j++ ){
+    newRow.push(array[i-1][j-1] + array[i-1][j])
+  }
+  newRow.push(1)
+  array.push(newRow)
+  }
+
+return array;
