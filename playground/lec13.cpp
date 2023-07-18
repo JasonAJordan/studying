@@ -3,16 +3,31 @@
 #include <iostream>
 using namespace std;
 
+// int main()
+// {
+//   int num;
+//   do
+//   {
+//   cout << "Enter size: ";
+//   cin >> num;
+//   } while ( num % 2 != 0);
+
+//   cout << "You entered: " << num << ".\n";
+  
+//   return 0;
+// }
+
+
 int main()
 {
-  int num;
-  do
-  {
-  cout << "Enter size: ";
-  cin >> num;
-  } while ( num % 2 != 0);
+  string password = "";
 
-  cout << "You entered: " << num << ".\n";
-  
+  while (password.length() <= 8 ){
+    cout << ("Enter password: ");
+    cin >> password;
+
+  }
+  cout << password;  
   return 0;
 }
+

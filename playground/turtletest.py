@@ -4,9 +4,12 @@ teddy = turtle.Turtle()
 names = ["violet", "purple", "indigo", "black"]
 for c in names:
   teddy.color(c)
-  teddy.left(60) 
-  teddy.forward(40) 
+  #teddy.left(60) 
+  teddy.forward(50) 
   teddy.dot(10)
+  
+  # teddy.right(60)
+  # teddy.forward(50) 
   
 teddy.penup() 
 teddy.forward(100) 
