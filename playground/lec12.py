@@ -21,14 +21,14 @@ def example():
 #   return 0;
 # }
 
-def ex2():
-  array = []
-  for i in range(4):
-    print("The world turned upside down...")
-  for j in range(10):
-    number = 10 - j
-    array.append(str(number))
-  print(' '.join(array))
-  print("Blast off!!")
+# def ex2():
+#   array = []
+#   for i in range(4):
+#     print("The world turned upside down...")
+#   for j in range(10):
+#     number = 10 - j
+#     array.append(str(number))
+#   print(' '.join(array))
+#   print("Blast off!!")
 
 x = ex2()
