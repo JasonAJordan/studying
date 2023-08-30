@@ -4,8 +4,7 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: Lab1A
 
-Here, briefly, at least in one or a few sentences
-describe what the program does.
+Asks the user for two number inputs, then returns the smaller one. 
 */
 
 #include <iostream>
@@ -15,9 +14,9 @@ int main(){
   int firstNum;
   int secondNum;
 
-  cout << "Enter the first number: " << endl;
+  cout << "Enter the first number: " ;
   cin >> firstNum;
-  cout << "Enter the second number: " << endl;
+  cout << "Enter the second number: " ;
   cin >> secondNum;
   cout << endl;
 
