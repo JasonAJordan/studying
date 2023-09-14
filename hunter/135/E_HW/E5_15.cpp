@@ -28,6 +28,12 @@ void sort2(int& a, int& b){
   }
 }
 
+void sort3(int& a, int& b, int& c) {
+  sort2(a, b);
+  sort2(b, c);
+  sort2(a, b);   
+}
+
 int main(){
   int a;
   int b;
@@ -40,9 +46,7 @@ int main(){
   cout << "Enter third value: ";
   cin >> c;
 
-  sort2(a, b);
-  sort2(b,c);
-  sort2(a,b);
+  sort3(a, b, c);
 
   cout << "a : " << a << endl << "b : " << b << endl << "c : " << c << endl;
 

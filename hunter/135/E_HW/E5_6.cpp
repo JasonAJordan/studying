@@ -17,19 +17,18 @@ using namespace std;
 
 string middle(string str){
   int length = str.length();
-  string string2 ;
+  string string2;
   if (length % 2 == 0){
     int idx = (length / 2);
     string2 = str.substr(idx - 1, 2);
-    cout << string2;
+    // cout << string2;
     return string2;
   } else {
     int idx = (length - 1) / 2;
     string2 = str.substr(idx, 1);
-    cout << string2;
+    // cout << string2;
     return string2;
   }
-    cout << "test";
 }
 
 int main(){
@@ -39,6 +38,5 @@ int main(){
   cin >> str;
 
   middle(str);
-  cout << "Done";
   return 0;
 }
