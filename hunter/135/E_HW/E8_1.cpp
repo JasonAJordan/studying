@@ -35,8 +35,10 @@ int main(){
     while (getline(in_file, temp)) { 
         cout << temp << "\n"; 
     }
+  }
   in_file.close();
 
 
   return 0;
 }
+

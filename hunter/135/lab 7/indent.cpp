@@ -36,31 +36,59 @@ string removeLeadingSpaces(string line){
   return newString;
 }
 
+int countChar(string line, char c){
+  int count = 0;
+  for (int i = 0; i < line.length(); i++){
+    if ( line[i] == c){
+      count++;
+    } 
+  }
+  return count;
+}
+
 
 // Driver function if needed
 int main(){
   string str;
+  int count = 0; 
 
-
-  // Hello I use this code to better test line by line. 
+  // // Hello I use this code to better test line by line in my vscode terminal. 
   // fstream in_file;
-  // in_file.open("bad-code.cpp"); 
+  // in_file.open("bad-code2.cpp"); 
 
   // if (in_file.is_open()) { 
   //   string temp;
   //   // While the file has lines, the data will be read. 
+  //   // Copy and paste STARTING HERE, change in_file to cin & temp to str! 
   //   while (getline(in_file, temp)) { 
-  //     //cout << temp;
+  //     // cout << count << endl;
+  //     if (removeLeadingSpaces(temp)[0] == '}'){
+  //       count--;
+  //     }
+  //     for (int i = 0; i < count; i++){
+  //       cout << "\t";
+  //     }
+  //     count += countChar(temp, '{');
+  //     count -= countChar(temp, '}');
   //     cout << removeLeadingSpaces(temp) << endl;
   //   }
+  //   // Copy and paste END HERE
   // }
   // in_file.close();
 
-  while(getline(cin, str)) {
+
+  while (getline(cin, str)) { 
+    // cout << count << endl;
+    if (removeLeadingSpaces(str)[0] == '}'){
+      count--;
+    }
+    for (int i = 0; i < count; i++){
+      cout << "\t";
+    }
+    count += countChar(str, '{');
+    count -= countChar(str, '}');
     cout << removeLeadingSpaces(str) << endl;
   }
 
-  // cout << removeLeadingSpaces("       int x = 1;  @");
-  // cout << removeLeadingSpaces("       @").length();
   return 0;
 }
