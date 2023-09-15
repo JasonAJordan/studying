@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 7A
+Assignment: Lab 7B
 
 Start by writing a function
 
