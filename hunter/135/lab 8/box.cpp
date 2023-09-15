@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 8A
+Assignment: Lab 8C
 
 Write a new program invert.cpp that inverts all colors, so white shades become black, and black become white:
 
@@ -104,9 +104,18 @@ int main() {
 	// for example we copy its contents into a new array
 	int out[MAX_H][MAX_W];
 
+
+
+
 	for(int row = 0; row < h; row++) {
 		for(int col = 0; col < w; col++) {
-			out[row][col] = (255 - img[row][col]);
+      bool colCondtion = ( (w / 4) <= col ) && (col <= ( 3 *  w)/ 4); // might need to be > depends on grade scope 
+      bool rowCondtion = ( (h / 4) <= row ) && (row <= ( 3 * h)/ 4);
+			if (colCondtion && rowCondtion){ 
+				out[row][col] = 255;
+			} else {
+				out[row][col] = img[row][col];
+			}
 		}
 	}
 
