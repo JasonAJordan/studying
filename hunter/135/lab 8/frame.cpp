@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 8C
+Assignment: Lab 8D
 
 Write a new program invert.cpp that inverts all colors, so white shades become black, and black become white:
 
