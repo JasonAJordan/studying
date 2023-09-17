@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 13A, B, c
+Assignment: Lab 13A, B, C, D
 
 // Part A
 Write a program recursion.cpp, defining a function
@@ -24,11 +24,23 @@ When left > right, the range is empty and the program should not print any numbe
 int sumRange(int left, int right);
 that computes the sum of all numbers in range left ≤   x   ≤ right. (Don’t use loops, global or static variables.)
 
+Part C
+int sumArray(int *arr, int size);
+
+Part D
+bool isAlphanumeric(string s);
 */
 
 #include <iostream>
 using namespace std;
 
+
+void printRange(int left, int right){
+  if (left <= right){
+    cout << left << " ";
+    printRange(left + 1, right);
+  }
+}
 
 
 int sumRange(int left, int right){
@@ -41,6 +53,9 @@ int sumRange(int left, int right){
 }
 
 int sumArray(int *arr, int size){
+  if (size == 0){
+    return 0;
+  }
   if (size == 1){
     return arr[0];
   }
@@ -57,7 +72,7 @@ bool isAlphanumeric(string s){
     return iswalnum(s[0]);
   }
 
-  // I check each char for iswalnum then make a substring and run it again until the 
+  // I check each char for iswalnum then make a substring and run it again unftil the 
   // string hits a lens of 1
   return iswalnum(s[0]) && isAlphanumeric(s.substr(1, s.length()));
 
@@ -65,9 +80,9 @@ bool isAlphanumeric(string s){
 
 int main() {
 
-  cout << isAlphanumeric("ABCD") << endl;        // true (1)
-  cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
-  cout << isAlphanumeric("KLMN 8-7-6") << endl;  // false (0)
+  // cout << isAlphanumeric("ABCD") << endl;        // true (1)
+  // cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
+  // cout << isAlphanumeric("KLMN 8-7-6") << endl;  // false (0)
 
   return 0;
 }
