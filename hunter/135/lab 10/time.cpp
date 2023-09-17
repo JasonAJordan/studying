@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 10A, B
+Assignment: Lab 10 all parts
 
 // task A
 Create a new program time.cpp. (Copy the class Time declaration in your program, it should be placed before main() function.)
@@ -19,7 +19,7 @@ Enter second time: 13 40
 These moments of time are X and Y minutes after midnight.
 The interval between them is Z minutes.
 
-
+... Not gonna copy and past all the tasks
 
 */
 
