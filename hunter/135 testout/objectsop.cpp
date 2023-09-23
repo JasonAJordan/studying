@@ -24,6 +24,7 @@ int Bug::get_position()  {
 void Bug::reset(){ 
   position = 0;
 }
+
 void Bug::up(){ 
   position = position + 10;
 }

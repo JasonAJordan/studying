@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab4D
+Assignment: Lab4F
 
 Write a program trapezoid.cpp that prints an upside-down trapezoid of given width and height.
 
