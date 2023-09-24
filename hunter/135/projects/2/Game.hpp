@@ -21,14 +21,14 @@ class Game {
 
 
 Game::Game(){
-  Field area; // default values 7 , 2
-  cout << "Printing size & num of mines" << endl;
-  cout << area.get_size() <<  " " << area.get_num_mines() << endl;
+  // Field areaDefault; // default values 7 , 2
+  // area = areaDefault;
+  cout << "Created Default game" << endl;
 }
 
 Game::Game(int size, int num_mines){
   Field area(size, num_mines);
-  area = area;
+
 }
 
 
@@ -38,10 +38,16 @@ void Game::play(){
   cout << "testing game.play" << endl;
 
   // This is to check my work
+  // cout << "Running .get_size() & .get_num_mines()" << endl;
   // cout << area.get_size() <<  " " << area.get_num_mines() << endl;
-  // area.printArray();
+  area.printArray();
 
 
+  cout << endl << area.empty() << endl;
+  cout << endl;
+  cout << endl << area.to_string() << endl;
+  cout << endl;
+  cout << endl << area.answer_string() << endl;
 }
 
 #endif
