@@ -14,29 +14,28 @@ using namespace std;
 class Field {
 
   private:
-  int* cells;
-  bool* checked;
-  int size;
-  int num_mines;
+    int* cells;
+    bool* checked;
+    int size;
+    int num_mines;
 
+  public:
+    void printArray(); // my helper
 
- public:
-  void printArray(); // my helper
+    Field(); //constructor
+    Field(int size, int num_mines);
+    ~Field(); //destructor
+    std::string to_string() const;
+    std::string answer_string() const;
 
-  Field(); //constructor
-  Field(int size, int num_mines);
-  ~Field(); //destructor
-  std::string to_string() const;
-  std::string answer_string() const;
-
-  // std::string neighbor() const; // 
-  std::string empty() const;
-  int get_size() const;
-  int get_num_mines() const;
-  int neighbor_mines(int index) const;
-  void set_checked(int index);
-  bool is_checked(int index) const;
-  bool has_mine(int index) const;
+    // std::string neighbor() const; // 
+    std::string empty() const;
+    int get_size() const;
+    int get_num_mines() const;
+    int neighbor_mines(int index) const;
+    void set_checked(int index);
+    bool is_checked(int index) const;
+    bool has_mine(int index) const;
 
 };
 
@@ -83,7 +82,7 @@ Field::Field(){
   // cout << "creating mines..." << endl;
   int mines = 0;
   while (mines < _num_mines){
-    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL)); // better rands by seeding
     int i = rand() % (_size);
     // cout << i << endl;
     if (cells_arr[i] != 1){
@@ -121,7 +120,7 @@ Field::Field(int _size, int _num_mines){
   // cout << "creating mines..." << endl;
   int mines = 0;
   while (mines < _num_mines){
-    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL)); // better rands by seeding
     int i = rand() % (_size);
     // cout << i << endl;
     if (cells_arr[i] != 1){
@@ -135,13 +134,10 @@ Field::Field(int _size, int _num_mines){
   checked_arr[i] = false;
   }
 
-  // printArray2(cells_arr, _size);
-
   size = _size;
   num_mines = _num_mines;
   cells = cells_arr;
   checked = checked_arr;
-
 
   // cout << "Saving the a Field with a size of " << size << " And mines of " << num_mines << endl;
 }
@@ -180,7 +176,9 @@ string Field::to_string() const{
     thridline += "  ";
     string blankOrChecked = " ";
     if (is_checked(i)){
-      blankOrChecked = neighbor_mines(i);
+      int isBombOrCountInt = neighbor_mines(i);
+      blankOrChecked =  (isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
+      // string bombOrCountStr = ( isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
     };
     thridline += blankOrChecked; 
     
@@ -198,7 +196,6 @@ string Field::answer_string() const{
   string secondline = "+";
   string thridline = "|";
 
-
   for (int i = 0; i < size; i++){
     firstLine += "    ";
     firstLine += std::to_string(i);
@@ -208,6 +205,7 @@ string Field::answer_string() const{
 
     thridline += "  ";
     int isBombOrCountInt = neighbor_mines(i);
+    // Warning Ternary operator might confuse students. 
     string bombOrCountStr = ( isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
     thridline += bombOrCountStr; 
     thridline += "  |";
@@ -257,7 +255,7 @@ int Field::neighbor_mines(int index) const {
 
   int count = 0;
   if (index == 0){
-    if (has_mine(1)){
+    if (has_mine(1)){ // or idx - 1
       count++;
     }
   } else if (index == (size - 1)){
@@ -276,7 +274,7 @@ int Field::neighbor_mines(int index) const {
 };
 
 void Field::set_checked(int index){
-  if (index > size){
+  if ((0 <= index) && (index < size)){
     checked[index] = true;
   }
 }
