@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: E7.16
+Assignment: E7.18
 
 Define a structure Triangle that contains three Point members. Write a function that 
 computes the perimeter of a Triangle. Write a program that reads the coordinates of 
@@ -23,6 +23,12 @@ struct Point {      // Structure declaration
   double y;         // Member (string variable)
 } ; 
 
+struct Triangle {
+  Point point1;
+  Point point2;
+  Point point3;
+};
+
 double distance(Point a, Point b) {
   // distance between two points forumla
   return sqrt(pow(a.x - b.x,2) + pow(a.y - b.y,2) ) ;
@@ -36,6 +42,9 @@ double trianglePerimeter(Point a, Point b, Point c){
   return total;
 }
 
+double perimeter(Triangle t){
+  return trianglePerimeter(t.point1, t.point2, t.point3);
+}
 
 // driver function
 int main(){
@@ -51,7 +60,13 @@ int main(){
   point2.x = 6;
   point2.y = 3;
 
-  cout << trianglePerimeter(point1, point2, point3) ; 
+  Triangle t;
+  t.point1 = point1;
+  t.point2 = point2;
+  t.point3 = point3;
 
+  cout << trianglePerimeter(point1, point2, point3) << endl ; 
+
+  cout << perimeter(t) ; 
   return 0;
 }

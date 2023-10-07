@@ -52,9 +52,9 @@ int main(){
   string str;
   int count = 0; 
 
-  // // Hello I use this code to better test line by line in my vscode terminal. 
+  // Hello I use this code to better test line by line in my vscode terminal. 
   // fstream in_file;
-  // in_file.open("bad-code2.cpp"); 
+  // in_file.open("bad-code3.cpp"); 
 
   // if (in_file.is_open()) { 
   //   string temp;
@@ -62,15 +62,19 @@ int main(){
   //   // Copy and paste STARTING HERE, change in_file to cin & temp to str! 
   //   while (getline(in_file, temp)) { 
   //     // cout << count << endl;
-  //     if (removeLeadingSpaces(temp)[0] == '}'){
-  //       count--;
-  //     }
-  //     for (int i = 0; i < count; i++){
-  //       cout << "\t";
-  //     }
-  //     count += countChar(temp, '{');
-  //     count -= countChar(temp, '}');
-  //     cout << removeLeadingSpaces(temp) << endl;
+  //  if (removeLeadingSpaces(str)[0] == '}'){
+  //     for (int i = 0; i < count - 1; i++){
+  //     cout << "\t";
+  //   }
+  //  } else {
+  //    for (int i = 0; i < count; i++){
+  //      cout << "\t";
+  //    }
+  //  }
+
+  //  count += countChar(str, '{');
+  //  count -= countChar(str, '}');
+  //  cout << removeLeadingSpaces(str) << endl;
   //   }
   //   // Copy and paste END HERE
   // }
@@ -80,11 +84,15 @@ int main(){
   while (getline(cin, str)) { 
     // cout << count << endl;
     if (removeLeadingSpaces(str)[0] == '}'){
-      count--;
+      for (int i = 0; i < count - 1; i++){
+        cout << "\t";
+      }
+    } else {
+      for (int i = 0; i < count; i++){
+        cout << "\t";
+      }
     }
-    for (int i = 0; i < count; i++){
-      cout << "\t";
-    }
+
     count += countChar(str, '{');
     count -= countChar(str, '}');
     cout << removeLeadingSpaces(str) << endl;

@@ -177,11 +177,10 @@ string Field::to_string() const{
     string blankOrChecked = " ";
     if (is_checked(i)){
       int isBombOrCountInt = neighbor_mines(i);
+      // Warning Ternary operator might confuse students. 
       blankOrChecked =  (isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
-      // string bombOrCountStr = ( isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
     };
     thridline += blankOrChecked; 
-    
     thridline += "  |";
     
   }
