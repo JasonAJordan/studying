@@ -71,7 +71,7 @@ void Game::play(){
   int size = area.get_size();
   int bombCount = area.get_num_mines();
 
-  cout << "testing game.play" << endl;
+  // cout << "testing game.play" << endl;
 
   // This is to check my work, 
   // cout << "Running .get_size() & .get_num_mines()" << endl;
@@ -84,19 +84,19 @@ void Game::play(){
   // cout << endl << area.answer_string() << endl;
 
 
-  cout << area.empty() << endl;
+  cout << area.empty_layout_string() << endl;
 
   while (gameOn){
     int idx = input();
     if (area.has_mine(idx)){
-      area.set_checked(idx);
+      area.mark_checked(idx); //area.set_checked(idx); 
       cout << endl << area.to_string() << endl;
       cout << "GameOver" << endl;
       gameOn = !gameOn; // maybe just use break? 
       continue;
     } else {
       // cout << "setting checked" << endl;
-      area.set_checked(idx);
+      area.mark_checked(idx); //area.set_checked(idx);
       // cout << "setting checked for idx " << idx << "  " << endl
       // << "comes back as " << area.is_checked(idx) << endl;
       selectedCount++;

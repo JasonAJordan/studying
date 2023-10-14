@@ -14,11 +14,11 @@ class Field {
  ~Field(); //destructor
  std::string to_string() const;
  std::string answer_string() const;
- std::string empty() const;
+ std::string empty_layout_string() const;
  int get_size() const;
  int get_num_mines() const;
  int neighbor_mines(int index) const;
- void set_checked(int index);
+ void mark_checked(int index);
  bool is_checked(int index) const;
  bool has_mine(int index) const;
 };

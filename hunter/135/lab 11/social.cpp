@@ -53,18 +53,29 @@ void Profile::setDisplayName(string dspn){
 }
 
 int main() {
-  Profile p1("marco", "Marco");    
-  cout << p1.getUsername() << endl; // marco
-  cout << p1.getFullName() << endl; // Marco (@marco)
+  // Profile p1("marco", "Marco");    
+  // cout << p1.getUsername() << endl; // marco
+  // cout << p1.getFullName() << endl; // Marco (@marco)
 
-  p1.setDisplayName("Marco Rossi"); 
-  cout << p1.getUsername() << endl; // marco
-  cout << p1.getFullName() << endl; // Marco Rossi (@marco)
+  // p1.setDisplayName("Marco Rossi"); 
+  // cout << p1.getUsername() << endl; // marco
+  // cout << p1.getFullName() << endl; // Marco Rossi (@marco)
   
-  Profile p2("tarma1", "Tarma Roving");    
-  cout << p2.getUsername() << endl; // tarma1
-  cout << p2.getFullName() << endl; // Tarma Roving (@tarma1)
+  // Profile p2("tarma1", "Tarma Roving");    
+  // cout << p2.getUsername() << endl; // tarma1
+  // cout << p2.getFullName() << endl; // Tarma Roving (@tarma1)
 
   
-  return 0; // not sure if I should inclue return 0;
+  // return 0; // not sure if I should inclue return 0;
+    Profile p1("marco", "Marco");
+    cout << p1.getUsername() << endl; 
+    cout << p1.getFullName() << endl; 
+
+    p1.setDisplayName("Marco Rossi");
+    cout << p1.getUsername() << endl; 
+    cout << p1.getFullName() << endl; 
+
+    Profile p2("tarma1", "Tarma Roving");
+    cout << p2.getUsername() << endl; 
+    cout << p2.getFullName() << endl;
 }

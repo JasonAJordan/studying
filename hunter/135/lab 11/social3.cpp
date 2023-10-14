@@ -23,7 +23,7 @@ class Profile {
     Profile(string usrn, string dspn);
     // Default Profile constructor (username="", displayname="")
     Profile();
-    // Return username
+    // Return username // ??????? All this did was mess up Part C
     string getUsername();
     // Return name in the format: "displayname (@username)"
     string getFullName();
@@ -37,7 +37,7 @@ Profile::Profile(string usrn, string dspn){
 }
 
 Profile::Profile(){
-  cout << username << endl;
+  // cout << username << endl;
 }
 
 string Profile::getUsername() { 
@@ -156,18 +156,21 @@ bool Network::follow(string usrn1, string usrn2){
 }
 
 void Network::printDot(){
-  cout << " digraph {" << endl;
+  cout << "digraph {" << endl;
 
   for (int i = 0; i < numUsers; i++){
-    cout << "\t\"@" << profiles[i].getUsername() << "\"" <<endl;
+    // cout << "\t\"@" << profiles[i].getUsername() << "\"" <<endl; 
+    // This class is so ugh...
+    cout << "  " << "\"" << "@" << profiles[i].getUsername() << "\"" <<endl; 
   }
-  cout << endl;
+  // cout << endl;
 
   for (int i =0; i< numUsers; i++){
     for (int j = 0; j < numUsers; j++){
 
-      if (following[i][j] == true ){
-        cout << "\t\"@" << profiles[i].getUsername() << "\" -> \'"
+      if (following[i][j] == true ){ 
+        // cout << "\t\"@" << profiles[i].getUsername() << "\" -> \'"
+        cout << "  " << "\"" << "@" << profiles[i].getUsername() << "\" -> \"@"
         << profiles[j].getUsername() <<  "\"" << endl;
       }
     }
@@ -176,8 +179,10 @@ void Network::printDot(){
 }
 
 int main() {
+
   Network nw;
   // add three users
+
   nw.addUser("mario", "Mario");
   nw.addUser("luigi", "Luigi");
   nw.addUser("yoshi", "Yoshi");
@@ -205,3 +210,5 @@ int main() {
 
   nw.printDot();
 }
+
+
