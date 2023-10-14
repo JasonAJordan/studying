@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab4F
+Assignment: Lab4G
 
 Write a program checkerboard3x3.cpp that asks the user to input width and height and prints a checkerboard of 3-by-3 squares. (It should work even if the input dimensions are not a multiple of three.)
 
@@ -52,8 +52,6 @@ int main() {
   cout << "Input height: " << endl;
   cin >> h; 
 
-
-
   for (int i = 0; i < h; i++ ){
     // This resets the X count of 3s
     threeCountX = 0;
@@ -72,7 +70,6 @@ int main() {
         threeCountX++;
       }
     }
-
 
     // This flips if we start with stars or not.
     if ( (i + 1) % 3 == 0){

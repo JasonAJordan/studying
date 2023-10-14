@@ -32,7 +32,7 @@ Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2){
   double p1Length = length(p1);
   double p2Length = length(p2);
 
-  Coord3D * farthest = (p1Length > p1Length) ?  p1 : p2;
+  Coord3D * farthest = (p1Length > p2Length) ?  p1 : p2;
   return farthest;
 }
 
@@ -95,22 +95,22 @@ int main() {
   // delete &vel;
 
   // Part E
-  double x, y, z;
-  cout << "Enter position: ";
-  cin >> x >> y >> z;
-  Coord3D *ppos = createCoord3D(x,y,z);
+  // double x, y, z;
+  // cout << "Enter position: ";
+  // cin >> x >> y >> z;
+  // Coord3D *ppos = createCoord3D(x,y,z);
   
-  cout << "Enter velocity: ";
-  cin >> x >> y >> z;
-  Coord3D *pvel = createCoord3D(x,y,z);
+  // cout << "Enter velocity: ";
+  // cin >> x >> y >> z;
+  // Coord3D *pvel = createCoord3D(x,y,z);
 
-  move(ppos, pvel, 10.0);
+  // move(ppos, pvel, 10.0);
 
-  cout << "Coordinates after 10 seconds: " 
-        << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << endl;
+  // cout << "Coordinates after 10 seconds: " 
+  //       << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << endl;
 
-  deleteCoord3D(ppos); // release memory
-  deleteCoord3D(pvel);
+  // deleteCoord3D(ppos); // release memory
+  // deleteCoord3D(pvel);
 
   
   return 0;
