@@ -2,7 +2,7 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 9E
+Assignment: Lab 9D
 
 Fix this program poem.cpp. 
 It should still keep creating poems, but all dynamically allocated memory should get deleted when it is not needed. 

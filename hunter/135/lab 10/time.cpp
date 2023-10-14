@@ -93,7 +93,7 @@ void printMovie(Movie mv){
 void printTimeSlot(TimeSlot ts){
 
   printMovie(ts.movie);
-  cout << " [stats at ";
+  cout << " [starts at ";
   printTime(ts.startTime);
   cout << ", ends by ";
   printTime(addMinutes(ts.startTime, ts.movie.duration));
@@ -126,11 +126,11 @@ bool timeOverlap(TimeSlot ts1, TimeSlot ts2){
   int ts2End =  minutesSinceMidnight(ts2EndTime);
 
   if (ts1Start == ts2Start) {
-    return false;
+    return true;
   } else if (ts1Start < ts2Start){
-    return (ts1End <= ts2Start);
+    return (ts1End >= ts2Start);
   } else {
-    return (ts2End <= ts1Start );
+    return (ts2End >= ts1Start );
   }
   // bool movie2StartsAfter = (ts1Start < ts2Start) && (ts1End <= ts2Start);
   // bool movie1StartsAfter = (ts2Start < ts1Start) && (ts2End <= ts1Start);
