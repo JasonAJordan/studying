@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+#include <cstdlib>
+#include <ctime>
 
 // Function to print an array, this is code I will use on a lot of problems. 
 void printArray(int arr[], int size)
@@ -27,9 +29,19 @@ void swap(int arr[], int n){
 
 int main(){
 
-  int arr[] = {1,2,4,6};
-  swap(arr, 4);
-  printArray(arr,4);
+  // int arr[] = {1,2,4,6};
+  // swap(arr, 4);
+  // printArray(arr,4);
+
+  // int m = 1265 % 1000;
+  // cout << m << endl;
+  // int c = m / 100;
+  // cout << c << endl;
+  srand((unsigned int)time(NULL)); // better rands by seeding
+  int i = ( rand()) % 10; // asdf
+  int n = ( rand() ) % 5 - 4;
+  float r = rand() % (21 - 10) + 10; // [10,20]
+  cout << i << "  " << n << " " << r << endl;
 
   return 0;
 }

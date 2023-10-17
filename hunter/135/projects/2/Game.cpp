@@ -25,7 +25,7 @@ using namespace std;
 Game::Game(){
   // Field areaDefault; // default values 7 , 2
   // area = areaDefault;
-  cout << "Created Default game" << endl;
+  // cout << "Created Default game" << endl;
 }
 
 Game::Game(int size, int num_mines){
@@ -70,19 +70,6 @@ void Game::play(){
   int selectedCount = 0;
   int size = area.get_size();
   int bombCount = area.get_num_mines();
-
-  // cout << "testing game.play" << endl;
-
-  // This is to check my work, 
-  // cout << "Running .get_size() & .get_num_mines()" << endl;
-  // cout << area.get_size() <<  " " << area.get_num_mines() << endl;
-  // area.printArray();
-  // cout << endl << area.empty() << endl;
-  // cout << endl;
-  // cout << endl << area.to_string() << endl;
-  // cout << endl;
-  // cout << endl << area.answer_string() << endl;
-
 
   cout << area.empty_layout_string() << endl;
 
