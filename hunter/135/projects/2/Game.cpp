@@ -23,8 +23,7 @@ using namespace std;
 
 
 Game::Game(){
-  // Field areaDefault; // default values 7 , 2
-  // area = areaDefault;
+  // default values 7 , 2
   // cout << "Created Default game" << endl;
 }
 
