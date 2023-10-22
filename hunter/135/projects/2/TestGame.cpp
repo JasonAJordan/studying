@@ -17,8 +17,5 @@ int main()
  return 0;
 }
 
-// List of annoyances
-// 1. is   // std::string neighbor() const; needed? 
-// 2. where is to_string()? This function is provided. but where is it?
-// 3. No example of game over path. 
+
 

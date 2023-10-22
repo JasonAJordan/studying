@@ -2,10 +2,15 @@
 Author: Jason Jordan
 Course: CSCI-135
 Instructor: Tong Yi
-Assignment: Lab 8F
+Assignment: Lab 8G
 
-Program pixelate.cpp will be pixelating the input image.
+Write a new program invert.cpp that inverts all colors, so white shades become black, and black become white:
 
+Since black = 0, and white = 255, you should do the following transformation for each pixel color:
+
+0 → 255
+1 → 254
+2 → 253
 */
 
 
@@ -85,8 +90,6 @@ void writeImage(int image[MAX_H][MAX_W], int height, int width) {
 }
 
 int main() {
-  // cout << "test";
-
 	int img[MAX_H][MAX_W];
 	int h, w;
 
@@ -99,15 +102,38 @@ int main() {
 	// for example we copy its contents into a new array
 	int out[MAX_H][MAX_W];
 
-	for(int row = 0; row < h; row += 2) {
-		for(int col = 0; col < w; col += 2) {
-			int avg = (img[row][col] + img[row + 1 ][col] + img[row][col + 1] + img[row + 1][col + 1]) / 4;
-			out[row][col] = avg;
-			out[row][col + 1] = avg;
-			out[row + 1][col] = avg;
-			out[row+ 1][col + 1] = avg;
+	for(int row = 0; row < h; row++) {
+		for(int col = 0; col < w; col++) {
 
-			// out[row][col] = (255 - img[row][col]);
+			int a = (row == 0 || col == 0) ? 0 : img[row - 1][col - 1];
+			int b = (row == 0 ) ? 0 : img[row - 1][col];
+			int c = (row == 0 || col == w - 1) ? 0 : img[row - 1][col + 1];
+
+			// d e f not used
+			// int d = (col == 0) ? 0 : img[row ][col - 1];
+			// int f = (col == w - 1) ? 0 : img[row ][col + 1];
+
+			int g = (row == h - 1 || col == 0) ? 0 : img[row + 1][col - 1];
+			int h_ = (row == h - 1 ) ? 0 : img[row + 1][col];
+			int i = (row == h - 1 || col == w - 1) ? 0 : img[row + 1][col + 1];
+
+			//out[row][col] = (255 - img[row][col]);
+			//f(a,b,c,d,e,f,g,h,i) = (g+2h+i)-(a+2b+c)
+			// . . . . . .
+			// . a b c . . 
+			// . d e f . .
+			// . g h i . .
+			// . . . . . .
+
+					//000,000,111
+					// (1+2+1) - (0)
+
+			int color = (g + (2 * h_ )+ i) - (a + (2*b)+c);
+			color = (color < 0) ? 0 : color;
+			color = ( color > 255) ? 255 : color;
+
+			out[row][col] = color ;
+
 		}
 	}
 
