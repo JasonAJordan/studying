@@ -99,7 +99,7 @@ void Game::play(){
     cout << "Mine explodes! Game ends." << endl;
   }
   cout << "The answer is" << endl;
-  cout << endl << area.answer_string() << endl;
+  cout << area.answer_string() << endl;
 }
 
 #endif

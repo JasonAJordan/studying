@@ -154,150 +154,110 @@ Field::~Field(){
 //Hence it does not have Field:: in front of its name.
 //Function get_labels is called by
 //to_string method of Field class.
+//Return a string representing labels of indices.
 string get_labels(int size) {
- string str;
- for (int i = 0; i < size; i++) {
- str += " ";
- if (i < 10)
- str += " " + std::to_string(i);
- else str += to_string(i);
- str += " ";
- }
- str += "\n";
- return str;
+    string str;
+    for (int i = 0; i < size; i++) { 
+        str += "  ";
+        if (i < 10)
+           str += " " + std::to_string(i);
+        else str += to_string(i);
+        str += "  ";
+    }
+    str += "\n";
+    return str;
 }
-//Since get_separate_line is not a must-provided
+//Since get_separate_line is not a must-provid 
 //functionality for Field class,
 //it is not a method in Field class.
 //Hence it does not have Field:: in front of its name.
 //Function get_separate_line is called by
 //to_string method of Field class.
 string get_separate_line(int size) {
- string str = "+";
- for (int i = 0; i < size; i++)
- str += "-----+";
- str += "\n";
- return str;
+    string str = "+";
+    for (int i = 0; i < size; i++)
+        str += "-----+";
+    str += "\n";
+    return str;
 }
 string Field::to_string() const {
- string str = get_labels(size);
- str += get_separate_line(size);
- str += "|";
- for (int i = 0; i < size; i++) {
-//  if (cells[i] == 0)
-//  {
-//  if (checked[i] == true)
-//  str += " " + std::to_string(neighbor_mines(i)) +
-//  " |";
-//  else str += " |";
-//  }
-//  else //must have a mine
-//  str += " |";
- //The above if-else can be simplified.
- //Idea: if a cell has no mine and is checked,
- //display its neighboring information,
- //otherwise, that is,
- //a cell has a mine or
- //it does not have a mine but is not checked yet,
- //do not display anything in that cell.
- //The code is as follows.
- if (cells[i] == 0 &&
- checked[i] == true)
- str += " " + std::to_string(neighbor_mines(i)) +
- " |";
- else str += " |";
- }
- str += "\n";
- str += get_separate_line(size);
- return str;
-}
+  string str = get_labels(size);
+  str += get_separate_line(size);
 
-// to_string(): returns a string represening a tabular format of cells with labels. If a cell
-// does not have a mine and is checked, then display the number of its neighbors,
-// otherwise, that is, display an empty cell. This func=on is provided.
+  str += "|";
+  for (int i = 0; i < size; i++) {
+      // if (cells[i] == 0) 
+      // {
+      //     if (checked[i] == true)
+      //         str += "  " + std::to_string(neighbor_mines(i)) +
+      //               "  |";
+      //     else str += "     |";
+      // }
+      // else //must have a mine 
+      //     str += "     |";
 
-//    0     1     2     3     4     5     6
-// +-----+-----+-----+-----+-----+-----+-----+
-// |  1  |  *  |  1  |  1  |  *  |  1  |  0  |
-// +-----+-----+-----+-----+-----+-----+-----+
+      //The above if-else can be simplified.
+      //Idea: if a cell has no mine and is checked,
+      //display its neighboring information,
+      //otherwise, that is,
+      //a cell has a mine or
+      //it does not have a mine but is not checked yet,
+      //do not display anything in that cell.
+      //The code is as follows.
 
-// string Field::to_string() const{
-//   string fakeGui = "";
-//   string firstLine = "";
-//   string secondline = "+";
-//   string thridline = "|";
-
-
-//   for (int i = 0; i < size; i++){
-//     firstLine += "    ";
-//     firstLine += std::to_string(i);
-//     firstLine += " ";
-
-//     secondline += "-----+";
-
-//     thridline += "  ";
-//     string blankOrChecked = " ";
-//     if (is_checked(i)){
-//       int isBombOrCountInt = neighbor_mines(i);
-//       // Warning Ternary operator might confuse students. 
-//       blankOrChecked =  (isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
-//     };
-//     thridline += blankOrChecked; 
-//     thridline += "  |";
-    
-//   }
-
-//   fakeGui = firstLine + "\n " + secondline + "\n " + thridline +  "\n " + secondline;
-//   return fakeGui;
-// }
-
-string Field::answer_string() const{
-  string fakeGui = "";
-  string firstLine = "";
-  string secondline = "+";
-  string thridline = "|";
-
-  for (int i = 0; i < size; i++){
-    firstLine += "    ";
-    firstLine += std::to_string(i);
-    firstLine += " ";
-
-    secondline += "-----+";
-
-    thridline += "  ";
-    int isBombOrCountInt = neighbor_mines(i);
-    // Warning Ternary operator might confuse students. 
-    string bombOrCountStr = ( isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
-    thridline += bombOrCountStr; 
-    thridline += "  |";
-    
+      if (cells[i] == 0 && 
+         checked[i] == true)
+        str += "  " + std::to_string(neighbor_mines(i)) +
+                  "  |";
+      else str += "     |";
   }
 
-  fakeGui = firstLine + "\n " + secondline + "\n " + thridline +  "\n " + secondline;
-  return fakeGui;
+  str += "\n";
+
+  str += get_separate_line(size);
+
+  return str;
+}
+
+
+string Field::answer_string() const{
+  string str = get_labels(size);
+  str += get_separate_line(size);
+
+  str += "|";
+  for (int i = 0; i < size; i++) {
+
+      if (cells[i] == 0 )
+        str += "  " + std::to_string(neighbor_mines(i)) +
+                  "  |";
+      else str += "  *  |";
+  }
+
+  str += "\n";
+
+  str += get_separate_line(size);
+
+  return str;
 }
 
 string Field::empty_layout_string() const {
-  string fakeGui = "";
-  string firstLine = "";
-  string secondline = "+";
-  string thridline = "|";
+  string str = get_labels(size);
+  str += get_separate_line(size);
 
+  str += "|";
+  for (int i = 0; i < size; i++) {
 
-  for (int i = 0; i < size; i++){
-    firstLine += "    ";
-    firstLine += std::to_string(i);
-    firstLine += " ";
-
-    secondline += "-----+";
-
-    thridline += "   ";
-    thridline += "  |";
-    
+      if (cells[i] == 0 && 
+         checked[i] == true)
+        str += "     |";
+      else str += "     |";
   }
 
-  fakeGui = firstLine + "\n " + secondline + "\n " + thridline +  "\n " + secondline;
-  return fakeGui;
+  str += "\n";
+
+  str += get_separate_line(size);
+
+  return str;
 }
 
 int Field::get_size() const{
@@ -341,16 +301,21 @@ void Field::mark_checked(int index){
 }
 
 bool Field::is_checked(int index) const {
-  // if (checked[index] == true){
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-  return (checked[index] == true) ? true : false;
+  if (checked[index] == true){
+    return true;
+  } else {
+    return false;
+  }
+  //return (checked[index] == true) ? true : false;
 } 
 
 bool Field::has_mine(int index) const {
-  return (cells[index] == 1) ? true : false;
+  if (cells[index] == 1){
+    return true;
+  } else {
+    return false;
+  }
+  //return (cells[index] == 1) ? true : false;
 }
 
 
@@ -364,6 +329,93 @@ bool Field::has_mine(int index) const {
 //       cout << cells[i] << " ";
 //   }
 //   cout << endl;
+// }
+
+
+// My old functions before the given to_string() function was uploaded
+//    0     1     2     3     4     5     6
+// +-----+-----+-----+-----+-----+-----+-----+
+// |  1  |  *  |  1  |  1  |  *  |  1  |  0  |
+// +-----+-----+-----+-----+-----+-----+-----+
+
+// string Field::to_string() const{
+//   string fakeGui = "";
+//   string firstLine = "";
+//   string secondline = "+";
+//   string thridline = "|";
+
+
+//   for (int i = 0; i < size; i++){
+//     firstLine += "    ";
+//     firstLine += std::to_string(i);
+//     firstLine += " ";
+
+//     secondline += "-----+";
+
+//     thridline += "  ";
+//     string blankOrChecked = " ";
+//     if (is_checked(i)){
+//       int isBombOrCountInt = neighbor_mines(i);
+//       // Warning Ternary operator might confuse students. 
+//       blankOrChecked =  (isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
+//     };
+//     thridline += blankOrChecked; 
+//     thridline += "  |";
+    
+//   }
+
+//   fakeGui = firstLine + "\n " + secondline + "\n " + thridline +  "\n " + secondline;
+//   return fakeGui;
+// }
+
+
+// string Field::answer_string() const{
+//   string fakeGui = "";
+//   string firstLine = "";
+//   string secondline = "+";
+//   string thridline = "|";
+
+//   for (int i = 0; i < size; i++){
+//     firstLine += "    ";
+//     firstLine += std::to_string(i);
+//     firstLine += " ";
+
+//     secondline += "-----+";
+
+//     thridline += "  ";
+//     int isBombOrCountInt = neighbor_mines(i);
+//     // Warning Ternary operator might confuse students. 
+//     string bombOrCountStr = ( isBombOrCountInt == -1) ? "*" : std::to_string(isBombOrCountInt);
+//     thridline += bombOrCountStr; 
+//     thridline += "  |";
+    
+//   }
+
+//   fakeGui = firstLine + "\n " + secondline + "\n " + thridline +  "\n " + secondline;
+//   return fakeGui;
+// }
+
+// string Field::empty_layout_string() const {
+//   string fakeGui = "";
+//   string firstLine = "";
+//   string secondline = "+";
+//   string thridline = "|";
+
+
+//   for (int i = 0; i < size; i++){
+//     firstLine += "    ";
+//     firstLine += std::to_string(i);
+//     firstLine += " ";
+
+//     secondline += "-----+";
+
+//     thridline += "   ";
+//     thridline += "  |";
+    
+//   }
+
+//   fakeGui = firstLine + "\n " + secondline + "\n " + thridline +  "\n " + secondline;
+//   return fakeGui;
 // }
 
 
