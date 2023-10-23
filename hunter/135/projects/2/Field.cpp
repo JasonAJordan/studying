@@ -81,8 +81,11 @@ Field::Field(){
 
   // cout << "creating mines..." << endl;
   int mines = 0;
+  srand(time(NULL)); 
+  // srand((unsigned int)time(NULL)); // better rands by seeding
+   // Just kidding gradescope freaks out over this
   while (mines < num_mines){
-    // srand((unsigned int)time(NULL)); // better rands by seeding // Just kidding gradescope freaks out over this
+
     int i = rand() % (size);
     // cout << i << endl;
     if (cells_arr[i] != 1){
@@ -119,8 +122,10 @@ Field::Field(int _size, int _num_mines){
 
   // cout << "creating mines..." << endl;
   int mines = 0;
+  srand(time(NULL)); 
+  // srand((unsigned int)time(NULL)); // better rands by seeding
   while (mines < num_mines){
-    // srand((unsigned int)time(NULL)); // better rands by seeding
+
     int i = rand() % (size);
     // cout << i << endl;
     if (cells_arr[i] != 1){
@@ -134,8 +139,8 @@ Field::Field(int _size, int _num_mines){
   checked_arr[i] = false;
   }
 
-  cells = cells_arr;
-  checked = checked_arr;
+  this->cells = cells_arr;
+  this->checked = checked_arr;
 
   // cout << "Saving the a Field with a size of " << size << " And mines of " << num_mines << endl;
 }

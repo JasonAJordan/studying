@@ -22,13 +22,12 @@ using namespace std;
 // };
 
 
-Game::Game(){
-  // default values 7 , 2
-  // cout << "Created Default game" << endl;
+Game::Game():area(){
+
 }
 
-Game::Game(int size, int num_mines){
-  Field area(size, num_mines);
+Game::Game(int size, int num_mines):area(size, num_mines){
+  //Field area(size, num_mines);
 
 }
 
