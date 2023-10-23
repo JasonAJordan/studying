@@ -40,26 +40,26 @@ using namespace std;
 // };
 
 // Function to print an array, this is code I will use on a lot of problems. 
-void printArray2(int arr[], int size)
-{
- cout << "printing init arry for cells" << endl;
+// void printArray2(int arr[], int size)
+// {
+//  cout << "printing init arry for cells" << endl;
 
-    int i;
-    for (i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
+//     int i;
+//     for (i = 0; i < size; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+// }
 
-void printArray3(bool arr[], int size){
- cout << "printing init arry for bools" << endl;
+// void printArray3(bool arr[], int size){
+//  cout << "printing init arry for bools" << endl;
 
-    int i;
-    for (i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
+//     int i;
+//     for (i = 0; i < size; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+// }
 
 
 // Default values are 7 for size and 2 for num of mines
@@ -96,8 +96,8 @@ Field::Field(){
   checked_arr[i] = false;
   }
 
-  cells = cells_arr;
-  checked = checked_arr;
+  this->cells = cells_arr;
+  this->checked = checked_arr;
 
   // cout << "Saving the a Field with a size of " << size << " And mines of " << num_mines << endl;
   // cout << "Created Default Field" << endl;
@@ -142,9 +142,9 @@ Field::Field(int _size, int _num_mines){
 
 Field::~Field(){
   delete [] cells;
-  int  *cells = NULL;
+  cells = NULL;
   delete [] checked;
-  int *checked = NULL;
+  checked = NULL;
 
 }
 
@@ -231,6 +231,7 @@ string Field::answer_string() const{
         str += "  " + std::to_string(neighbor_mines(i)) +
                   "  |";
       else str += "  *  |";
+
   }
 
   str += "\n";
@@ -269,29 +270,43 @@ int Field::get_num_mines() const{
 }
 
 int Field::neighbor_mines(int index) const {
+  int count = 0;
 
-  if (has_mine(index)){
+  if (cells[index] == 1){
     return -1;
   }
 
-  int count = 0;
-  if (index == 0){
-    if (has_mine(1)){ // or idx - 1
-      count++;
-    }
-  } else if (index == (size - 1)){
-    if (has_mine(index - 1)){
-      count++;
-    }
-  } else {
-    if (has_mine(index + 1)){
-      count++;
-    }
-    if (has_mine(index - 1)){
-      count++;
-    }
+  if (index > 0 && cells[index - 1 ] == 1){
+    count++;
+  } 
+  if ( (index < size -1)  && (cells[index + 1] == 1)){
+    count++;
   }
   return count;
+
+
+//   if (has_mine(index)){
+//     return -1;
+//   }
+
+//   int count = 0;
+//   if (index == 0){
+//     if (has_mine(1)){ // or idx - 1
+//       count++;
+//     }
+//   } else if (index == (size - 1)){
+//     if (has_mine(index - 1)){
+//       count++;
+//     }
+//   } else {
+//     if (has_mine(index + 1)){
+//       count++;
+//     }
+//     if (has_mine(index - 1)){
+//       count++;
+//     }
+//   }
+//   return count;
 };
 
 void Field::mark_checked(int index){
@@ -301,6 +316,9 @@ void Field::mark_checked(int index){
 }
 
 bool Field::is_checked(int index) const {
+  if (index < 0 || index >= size) {
+    return false;
+  }
   if (checked[index] == true){
     return true;
   } else {
@@ -310,6 +328,9 @@ bool Field::is_checked(int index) const {
 } 
 
 bool Field::has_mine(int index) const {
+  if (index < 0 || index >= size) {
+    return false;
+  }
   if (cells[index] == 1){
     return true;
   } else {
