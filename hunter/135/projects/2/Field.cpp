@@ -1,5 +1,4 @@
-#ifndef FIELD_C //include guard
-#define FIELD_C
+// 
 
 
 #include <string>
@@ -445,4 +444,4 @@ bool Field::has_mine(int index) const {
 // }
 
 
-#endif
+// #endif

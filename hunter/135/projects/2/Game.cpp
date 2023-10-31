@@ -1,8 +1,8 @@
 //#pragma once
-#ifndef GAME_C
-#define GAME_C
-#include "Field.hpp"
-#include "Field.cpp"
+// #ifndef GAME_C
+// #define GAME_C
+// #include "Field.hpp"
+// #include "Field.cpp"
 #include "Game.hpp"
 
 #include <iostream>
@@ -72,11 +72,12 @@ void Game::play(){
   cout << area.empty_layout_string() << endl;
 
   while (gameOn){
+    cout << "Round " << selectedCount + 1 << ": "; 
     int idx = input();
     if (area.has_mine(idx)){
       area.mark_checked(idx); //area.set_checked(idx); 
-      cout << endl << area.to_string() << endl;
-      cout << "GameOver" << endl;
+      // cout << endl << area.to_string() << endl;
+      // cout << "GameOver" << endl;
       gameOn = !gameOn; // maybe just use break? 
       continue;
     } else {
@@ -90,15 +91,17 @@ void Game::play(){
         gameWon = true;
       }
     }
-    cout << endl << area.to_string() << endl << endl;
+    //cout << endl << area.to_string() << endl;
+    cout << area.to_string() << endl;
   }
   if (gameWon){
     cout << "Congratulations! Find out all the cells without mines." << endl;
   } else {
     cout << "Mine explodes! Game ends." << endl;
   }
-  cout << "The answer is" << endl;
-  cout << area.answer_string() << endl;
+  cout << endl;
+  cout << "The answer is " << endl;
+  cout << area.answer_string();
 }
 
-#endif
+// #endif

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Field.hpp"
-#include "Field.cpp"
+// #include "Field.hpp"
+// #include "Field.cpp"
 #include "Game.hpp"
-#include "Game.cpp"
+//#include "Game.cpp"
 using namespace std;
 
 
@@ -16,6 +16,7 @@ int main()
 
  return 0;
 }
-
+// g++ TestGame.cpp Field.cpp Game.cpp
+// ./a.out   
 
 
