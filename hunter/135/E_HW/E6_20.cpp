@@ -4,7 +4,6 @@ Course: CSCI-135
 Instructor: Tong Yi
 Assignment: E6.20
 
- TA PLEASE NOTE THAT I HAD A LEETCODE JUST LIKE THIS BUT WITH JS A FEW DAYS AGO. 
 
 Write a function
   vector<int> merge_sorted(vector<int> a, vector<int> b)
@@ -51,11 +50,13 @@ vector<int> merge_sorted(vector<int> a, vector<int> b){
     }
 
   }
-  if (idxA < aLens){
+  while (idxA < aLens){
+
     c.push_back(a[idxA]);
     idxA++;
   }
-  if (idxB < bLens){
+  while (idxB < bLens){
+
     c.push_back(b[idxB]);
     idxB++;
   }
@@ -83,6 +84,7 @@ vector<int> merge_sorted(vector<int> a, vector<int> b){
 
 int main(){
   vector<int> a = {1, 4, 9, 16};
+  //vector<int> b = {4, 7, 9, 9, 11};
   vector<int> b = {4, 7, 9, 9, 11};
 
   vector<int> c = merge_sorted(a, b);

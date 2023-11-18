@@ -29,7 +29,7 @@ using namespace std;
 //     cout << endl;
 // }
 
-vector<int> goodVibes(const vector<int>& v){
+vector<int> goodVibes(const vector<int> v){
   vector<int> vec = {};
   for (int i = 0; i < v.size() ;i++){
     if (v[i] > 0){

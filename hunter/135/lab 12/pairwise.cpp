@@ -22,7 +22,7 @@ using namespace std;
 //     cout << endl;
 // }
 
-vector<int> sumPairWise(const vector<int> &v1, const vector<int> &v2){
+vector<int> sumPairWise( vector<int> &v1,  vector<int> &v2){
   vector<int> vec = {};
   int v1Len = v1.size();
   int v2Len = v2.size();

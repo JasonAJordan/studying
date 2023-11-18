@@ -44,10 +44,14 @@ void printRange(int left, int right){
 
 
 int sumRange(int left, int right){
+
+  if (left > right ){
+    return 0;
+  }
   if (left == right){
     return right;
   } else {
-    return left + sumRange(left + 1, right);
+    return left + sumRange(left + 1, right );
   }
 
 }
@@ -79,7 +83,8 @@ bool isAlphanumeric(string s){
 }
 
 int main() {
-
+  int x = sumRange(1,3);
+  cout << x ; 
   // cout << isAlphanumeric("ABCD") << endl;        // true (1)
   // cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
   // cout << isAlphanumeric("KLMN 8-7-6") << endl;  // false (0)

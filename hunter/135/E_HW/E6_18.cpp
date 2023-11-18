@@ -30,8 +30,8 @@ void printVector(vector<int> a, int size)
 }
 
 vector<int> append(vector<int> a, vector<int> b){
-  b.insert(b.end(), a.begin(), a.end());
-  return b;  
+  a.insert(a.end(), b.begin(), b.end());
+  return a;  
 }
 
 int main(){
