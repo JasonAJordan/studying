@@ -45,7 +45,7 @@ int Circuit::get_first_switch_state() {
 }
 
 int Circuit::get_second_switch_state() {
-  return switch_one_state;
+  return switch_two_state;
 }
 
 int Circuit::get_lamp_state() {
@@ -65,7 +65,7 @@ void Circuit::toggle_second_switch() {
   if (switch_two_state == 1){
     switch_two_state = 0;
   } else {
-    switch_one_state = 1;
+    switch_two_state = 1;
   }
   lamp_state = (lamp_state == 1) ? 0 : 1;
 }
@@ -81,6 +81,8 @@ int main(){
   circuitTest.switch_two_state = 0;
 
   circuitTest.toggle_first_switch();
+    circuitTest.toggle_second_switch();
+
   cout << circuitTest.get_first_switch_state() << endl;
   cout << circuitTest.get_lamp_state() << endl;
 

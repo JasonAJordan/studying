@@ -82,12 +82,43 @@ bool isAlphanumeric(string s){
 
 }
 
+bool nestedParens(string s){
+  if (s == "") return true;
+  int leng = s.length();
+  if (s[0] != '(' || s[leng-1] != ')') return false;
+  string s2 = s.substr(1, leng - 2);
+  //cout << s2 << endl; 
+  return nestedParens(s2);
+}
+
+bool helper(int cashOne, int cashTwo, int *prices, int size){
+  if(size == 0) {
+    return cashOne == cashTwo; 
+  }
+
+  if(helper(cashOne + prices[0], cashTwo, prices +1, size -1)){
+    return true;
+  }
+  
+  if(helper(cashOne, cashTwo + prices[0], prices +1, size -1)){
+    return true;
+  }
+  
+  return false;
+}
+
+// Part f // Is this possible without a helper? 
+bool divisible(int *prices, int size){
+  return helper(0,0,prices,size);
+}
+
 int main() {
   int x = sumRange(1,3);
-  cout << x ; 
+  //cout << x ; 
   // cout << isAlphanumeric("ABCD") << endl;        // true (1)
   // cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
   // cout << isAlphanumeric("KLMN 8-7-6") << endl;  // false (0)
 
+  cout << nestedParens("((()))") << endl;
   return 0;
 }
