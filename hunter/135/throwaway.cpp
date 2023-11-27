@@ -53,6 +53,14 @@ class Triangle {
   int c;
 };
 
+void printVector(vector<int> a, int size)
+{
+    int i;
+    for (i = 0; i < size; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+}
 
 int main(){
 
@@ -70,10 +78,20 @@ int main(){
   // float r = rand() % (21 - 10) + 10; // [10,20]
   // cout << i << "  " << n << " " << r << endl;
 
-  vector<int> num(4);
-  num.push_back(4);
-  num[0] = 1;
-  cout << num.size() << " " << num[0] << " "<< num[5];
+  vector<int> nums(4);
+  //nums.push_back(5);
+  nums[0] = 1;
+  nums[1] = 2;
+  nums[2] = 3;
+  nums[3] = 4;
+  printVector(nums, 5);
+  cout << endl;
+  //nums[1] = nums[nums.size()-1];
+  nums[nums.size()-1] = nums[2];
+  nums.pop_back();
+  printVector(nums, 4);
+
+  //cout << num.size() << " " << num[0] << " "<< num[5];
 
   return 0;
 }
