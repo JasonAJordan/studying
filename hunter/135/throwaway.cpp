@@ -84,14 +84,39 @@ int main(){
   nums[1] = 2;
   nums[2] = 3;
   nums[3] = 4;
-  printVector(nums, 5);
+  printVector(nums, nums.size());
   cout << endl;
   //nums[1] = nums[nums.size()-1];
-  nums[nums.size()-1] = nums[2];
-  nums.pop_back();
-  printVector(nums, 4);
+  // nums[nums.size()-1] = nums[2];
+  // nums.pop_back();
+  // printVector(nums, 4);
+
+  int shift = 0;
+  for (int i = 0; i < nums.size(); i++){
+    if (nums[i] == 2){
+      nums[i] = nums[i+1 + shift];
+      shift++;
+    } else {
+      nums[i] = nums[i+shift];
+    }
+  }
+  for (int i = 0; i < shift; i++ ){
+    nums.pop_back();
+  }
+
+  printVector(nums, nums.size());
+
+
+
+
 
   //cout << num.size() << " " << num[0] << " "<< num[5];
+
+
+  // string s = "tests";
+
+  // int count = sizeof(s)/sizeof(s[0]);
+  // cout << count << endl;
 
   return 0;
 }
