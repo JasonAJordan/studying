@@ -109,7 +109,6 @@ int main(){
 
 
 
-
   //cout << num.size() << " " << num[0] << " "<< num[5];
 
 
