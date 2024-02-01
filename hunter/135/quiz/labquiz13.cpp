@@ -15,7 +15,6 @@ using namespace std;
 
 
 
-
 vector<int> makeVector(int n){
   vector<int> v;
   if (n <= 0){

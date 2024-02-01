@@ -1,5 +1,7 @@
+
 # Jason Jordan
 # CSCI 133
+
 
 
 # 1. Have your program check the word 'coronavirus' itself and report what unique letters it contains.
