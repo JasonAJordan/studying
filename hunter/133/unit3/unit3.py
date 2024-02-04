@@ -137,7 +137,8 @@
 # longest = 0
 # longestword = ''
 
-# with open('/Users/jason/Dev/studying/hunter/133/unit3/pap.txt') as book:
+# with open('hunter/133/unit3/pap.txt') as book:
+# #with open('/Users/jason/Dev/studying/hunter/133/unit3/pap.txt') as book:
 #     for line in book:
 #         for word in cleanedup(line).split():
 #           if len(word) > longest:
@@ -157,6 +158,118 @@
 # Enter English word: cat
 # cat = gato
 
+# translate = {}
+# while True:
+#   wordE = input('Enter English word: ')
+#   if wordE in translate:
+#     print(wordE, '=', translate[wordE])
+#   else:
+#     wordS = input('Enter translation: ')
+#     translate[wordE] = wordS
+#   print()
+
+# Write a program that compiles information on the number of occurrences of each
+# word used in Pride and Prejudice.  After the information is compiled, the user should
+# be able to quickly find out how many times any particular words are used.
+
+# def cleanedup(s):
+#     alphabet = 'abcdefghijklmnopqrstuvwxyz'
+#     cleantext = ''
+#     for character in s.lower():
+#         if character in alphabet:
+#             cleantext += character
+#         else:
+#             cleantext += ' '
+#     return cleantext
+
+# concordance = {}
 
 
+# with open('hunter/133/unit3/pap.txt') as book:
+# #with open('/Users/jason/Dev/studying/hunter/133/unit3/pap.txt') as book:
+#     for line in book:
+#         for word in cleanedup(line).split():
+#           if word in concordance:
+#               concordance[word] = concordance[word] + 1
+#           else:
+#               concordance[word] = 1
+
+# while True:
+#     word = input("Enter a word ")
+#     wordClean = cleanedup(word)
+#     if wordClean in concordance:
+#       print(wordClean, 'was said', concordance[wordClean], 'times.')
+#     else:
+#         print('Not found')
+  
+#4
+# Write a program that prints the name Fred 100 times, one time per line.
+
+# count = 1
+# while count <= 100:
+#   print(count, 'Fred')
+#   count += 1
+
+#5
+# Write a program that repeatedly gets a group of numbers from the user and displays
+# the average.  Define and use a function called average that takes in a list of numbers
+# and returns the average.  Here is a sample run:
+
+# while True:
+#   total = 0
+#   count = 0
+#   numbers = input("Enter numbers:")
+#   for num in numbers.split():
+#     total = total + int(num)
+#     count = count + 1
+#   print("Average:", total/count)
+
+
+# given solution
+# def average (numbers):
+#   total = 0
+#   for number in numbers:
+#     total += number
+#   return total/len(numbers)
+# while True:
+#   text = input('Enter numbers: ') 
+#   userNumbers = []
+#   for word in text.split():
+#     userNumbers.append(int (word))
+#   print('Average:', average (userNumbers))
+
+# Write a function called lengths that takes in a list of strings and returns a list of the
+# lengths of the strings.  If we pass it ['Ed', 'Ted', 'Fred', 'Jennifer'], it will return [2, 3, 4,
+# 8].  Use this function, along with the average function from the previous program
+# and the cleanedup function, to write a program that accepts sentences from the user
+# and reports the average length of the words in the sentence.
+
+def cleanedup(s):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    cleantext = ''
+    for character in s.lower():
+        if character in alphabet:
+            cleantext += character
+        else:
+            cleantext += ' '
+    return cleantext
+
+def lengths(s):
+  lengths = []
+  for word in words:
+    lengths.append(len(word))
+  return lengths
+
+def average(words):
+  total = 0
+  for word in words:
+    total += word
+  return total/len(words)
+
+while True:
+    line = input('Enter a sentence: ')
+    words = cleanedup(line).split()
+    print('Average word length:', average(lengths(words)))
+
+    
 
