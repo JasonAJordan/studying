@@ -25,6 +25,7 @@ total = 0
 longestLineCount =0
 longestLineText = ''
 concordance = {}
+
 #with open('/Users/jason/Dev/studying/hunter/133/unit3/elon-musk.txt') as tweets:
 with open('elon-musk.txt') as tweets:
   for line in tweets:
