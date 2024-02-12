@@ -224,101 +224,101 @@ left hand side.  Add this widget to myWidgets.py and use it to rewrite Program 9
 # Program 8.2.  Be sure that code for the enhanced entry widget is included in
 # myWidgets.py before you start
 
-# from tkinter import *
-# from myWidgets import *
+from tkinter import *
+from myWidgets import *
 
-# translations = {}
-# word = ''
-
-
-# def translate():
-#   global word
-#   word = userInput.get()
-#   # userInput.delete(0,END)
-#   if word in translations:
-#     answer['text'] = '{0} = {1}'.format(word, translations[word])
-#   else:
-#     userInput.setPrompt('Enter translation for {0}'.format(word))
-#     userInput.setActionText('save')
-#     userInput.setAction(save)
-#     answer['text'] = ''
-
-# def save():
-#   translations[word] = userInput.get()
-#   userInput.setPrompt('Enter word:')
-#   userInput.setActionText('Translate')
-#   userInput.setAction(translate)
+translations = {}
+word = ''
 
 
-# root = Tk()
+def translate():
+  global word
+  word = userInput.get()
+  # userInput.delete(0,END)
+  if word in translations:
+    answer['text'] = '{0} = {1}'.format(word, translations[word])
+  else:
+    userInput.setPrompt('Enter translation for {0}'.format(word))
+    userInput.setActionText('save')
+    userInput.setAction(save)
+    answer['text'] = ''
 
-# userInput = enhancedEntry(root, ' Enter word:', 'Translate', translate)
-# userInput.pack(fill= X)
+def save():
+  translations[word] = userInput.get()
+  userInput.setPrompt('Enter word:')
+  userInput.setActionText('Translate')
+  userInput.setAction(translate)
 
-# answer = Label(root)
-# answer.pack(side=BOTTOM, anchor=W)
 
-# mainloop()
+root = Tk()
+
+userInput = enhancedEntry(root, ' Enter word:', 'Translate', translate)
+userInput.pack(fill= X)
+
+answer = Label(root)
+answer.pack(side=BOTTOM, anchor=W)
+
+mainloop()
 
 # 3 Define a new widget that initially displays a single entry box, along with two buttons.
 # One button can be set to display any text and carry out any function, as in the
 # enhanced entry widget.
 
-from tkinter import *
-from myWidgets import *
+# from tkinter import *
+# from myWidgets import *
 
-class multipleEntry (Frame) :
-  def __init__ (self, parent, promptText, actionText, action):
-    Frame.__init__(self, parent)
-    self.prompt = Label (self) 
-    self.prompt['text'] = promptText 
-    self.prompt.pack(anchor=W)
+# class multipleEntry (Frame) :
+#   def __init__ (self, parent, promptText, actionText, action):
+#     Frame.__init__(self, parent)
+#     self.prompt = Label (self) 
+#     self.prompt['text'] = promptText 
+#     self.prompt.pack(anchor=W)
 
-    self.entries =[self.makeEntryFrame()]
-    self.moreButton = self.makeMoreButton()
+#     self.entries =[self.makeEntryFrame()]
+#     self.moreButton = self.makeMoreButton()
 
-    self.actionButton =  Button(self)
-    self.actionButton['text'] = actionText 
-    self.actionButton['command'] = action 
-    self.actionButton.pack(side=BOTTOM, anchor=W)
+#     self.actionButton =  Button(self)
+#     self.actionButton['text'] = actionText 
+#     self.actionButton['command'] = action 
+#     self.actionButton.pack(side=BOTTOM, anchor=W)
 
-  def makeEntryFrame(self):
-    self.lastFrame = Frame(self)
-    self.lastFrame.pack(fill=X, anchor=W)
-    entry = Entry(self.lastFrame)
-    entry.pack(side=LEFT)
-    return entry
+#   def makeEntryFrame(self):
+#     self.lastFrame = Frame(self)
+#     self.lastFrame.pack(fill=X, anchor=W)
+#     entry = Entry(self.lastFrame)
+#     entry.pack(side=LEFT)
+#     return entry
   
-  def makeMoreButton(self):
-    button = Button(self.lastFrame)
-    button['text'] = 'More'
-    button['command'] = self.addEntry
-    button.pack(side=LEFT)
-    return button
+#   def makeMoreButton(self):
+#     button = Button(self.lastFrame)
+#     button['text'] = 'More'
+#     button['command'] = self.addEntry
+#     button.pack(side=LEFT)
+#     return button
   
-  def addEntry(self):
-    self.entries.append(self.makeEntryFrame())
-    self.moreButton.destroy()
-    self.moreButton = self.makeMoreButton()
+#   def addEntry(self):
+#     self.entries.append(self.makeEntryFrame())
+#     self.moreButton.destroy()
+#     self.moreButton = self.makeMoreButton()
 
-  def get(self):
-    print([entry.get() for entry in self.entries])
-    return [entry.get() for entry in self.entries]
+#   def get(self):
+#     print([entry.get() for entry in self.entries])
+#     return [entry.get() for entry in self.entries]
 
-def pick():
-  names = userInput.get()
-  favorite['text'] = 'My favorite name is '
-  for name in names:
-    if len(name) >= 5:
-      favorite['text'] += name
-      return
-  favorite['text'] += names[0]
+# def pick():
+#   names = userInput.get()
+#   favorite['text'] = 'My favorite name is '
+#   for name in names:
+#     if len(name) >= 5:
+#       favorite['text'] += name
+#       return
+#   favorite['text'] += names[0]
 
-root = Tk()
+# root = Tk()
 
-userInput = multipleEntry(root, 'Enter Names:', 'Pick favorite', pick)
-userInput.pack(expand=YES, fill=BOTH)
+# userInput = multipleEntry(root, 'Enter Names:', 'Pick favorite', pick)
+# userInput.pack(expand=YES, fill=BOTH)
 
-favorite = Label(root)
-favorite.pack(side=BOTTOM, anchor=W)
-mainloop()
+# favorite = Label(root)
+# favorite.pack(side=BOTTOM, anchor=W)
+# mainloop()

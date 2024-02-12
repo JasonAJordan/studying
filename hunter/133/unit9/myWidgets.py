@@ -28,7 +28,35 @@ class enhancedEntry(Frame):
     def setAction(self, cmd):
         self.button['command'] = cmd
 
-#root = Tk()
+# The last question from unit 9 has the closest to what I want for test 9,
+# the code will be derived from that. 
+
+class CardsFrame (Frame) :
+  def __init__ (self, parent, hand):
+    Frame.__init__(self, parent)
+    self.score = Label(self) 
+    self.score['text'] = ""
+    self.score.pack(expand=YES, fill=BOTH)
+
+    self.entries = []
+    self.entriesFrame = Frame(self)
+    self.entriesFrame.pack(fill=X, anchor=W)
+
+  def makeEntriesFrame(self, hand ):
+    self.entriesFrame.destroy()
+    self.entriesFrame = Frame(self)
+    self.entriesFrame.pack(fill=X, anchor=W)
+
+    self.entries = []
+    for card in hand:
+      self.entries.append(self.makeEntryFrame(card))
+
+  def makeEntryFrame(self, card):
+    entry = Button(self.entriesFrame,  width=15)
+    entry['text'] = '{0}'.format(str(card))
+    entry.pack( anchor='center')
+    return entry
+  
 
 # For 9.2
 class SlidingLabel(Label):
