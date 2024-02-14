@@ -29,7 +29,7 @@ class enhancedEntry(Frame):
         self.button['command'] = cmd
 
 # The last question from unit 9 has the closest to what I want for test 9,
-# the code will be derived from that. 
+# the code will be derived from that and may look simliar.
 
 class CardsFrame (Frame) :
   def __init__ (self, parent, hand):
@@ -38,7 +38,8 @@ class CardsFrame (Frame) :
     self.score['text'] = ""
     self.score.pack(expand=YES, fill=BOTH)
 
-    self.entries = []
+
+    self.entries = [] # not 100% sure if I needed this array
     self.entriesFrame = Frame(self)
     self.entriesFrame.pack(fill=X, anchor=W)
 
