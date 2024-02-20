@@ -7,7 +7,9 @@ using namespace std;
 
 
 int main() {
-cout << "Hello world";
+  cout << "Hello world\n";
+  // int x = 1 / 4;
+  // cout << x ;
 return 0;
 
 

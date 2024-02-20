@@ -44,6 +44,7 @@
         "typeinfo": "cpp",
         "iomanip": "cpp",
         "ctime": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "__locale": "cpp"
     }
 }
