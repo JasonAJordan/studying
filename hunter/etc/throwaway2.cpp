@@ -7,9 +7,9 @@ using namespace std;
 
 
 int main() {
-  cout << "Hello world\n";
-  // int x = 1 / 4;
-  // cout << x ;
+  int a = 1 + 3 % 2;
+  cout << a;
+
 return 0;
 
 
